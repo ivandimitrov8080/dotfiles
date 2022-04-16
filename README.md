@@ -6,7 +6,7 @@
 
 3. Ignore the .cfg dir in git
 
-	`echo ".cfg" > .gitignore
+	`echo ".cfg" > .gitignore`
 
 4. Create the .cfg folder by cloning this repo into your $HOME/.cfg directory
 
