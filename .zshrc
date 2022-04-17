@@ -2,7 +2,7 @@ source ~/.zsh/antigen.zsh
 source /usr/share/git/completion/git-completion.zsh
 __git_complete config __git_main
 
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 antigen use oh-my-zsh
 
