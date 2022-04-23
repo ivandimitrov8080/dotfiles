@@ -1,6 +1,6 @@
 source ~/.zsh/antigen.zsh
 source /usr/share/git/completion/git-completion.zsh
-__git_complete config __git_main
+source ~/.zsh/functions.zsh
 
 #Enable vi mode
 bindkey -v
