@@ -1,0 +1,4 @@
+alt + shift + Return
+	st
+alt + p
+	dmenu_run -sb "#fa7d1e"
