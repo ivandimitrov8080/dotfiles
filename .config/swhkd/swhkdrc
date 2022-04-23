@@ -4,3 +4,8 @@ alt + p
 	dmenu_run -sb "#fa7d1e"
 F12
 	print-screen
+super + b
+	brave-browser-nightly
+super + s
+	steam
+
