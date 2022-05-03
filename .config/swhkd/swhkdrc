@@ -1,7 +1,7 @@
 alt + shift + Return
 	st
 alt + p
-	dmenu_run -sb "#fa7d1e"
+	dmenu-run-xrdb
 F12
 	print-screen
 F11
