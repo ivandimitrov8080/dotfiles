@@ -1,1 +1,0 @@
-export BATS_RUN_SKIPPED=true

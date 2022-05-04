@@ -1,7 +1,6 @@
 source ~/.config/zsh/antigen.zsh
 source /usr/share/git/completion/git-completion.zsh
-source ~/.config/zsh/functions.zsh
-source ~/.config/zsh/exports.zsh
+source ~/.scripts/functions/*
 
 #Enable vi mode
 bindkey -v
