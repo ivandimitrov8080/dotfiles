@@ -1,3 +1,3 @@
 . "$HOME/.cargo/env"
-. "$HOME/.scripts/env"
+. "$HOME/bin/env"
 

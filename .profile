@@ -1,5 +1,5 @@
 . "$HOME/.cargo/env"
-. "$HOME/.scripts/env"
+. "$HOME/bin/env"
 
 start-pulseaudio-x11
 

@@ -1,6 +1,6 @@
 source ~/.config/zsh/antigen.zsh
 source /usr/share/git/completion/git-completion.zsh
-source ~/.scripts/functions/*
+source ~/bin/functions/*
 
 #Enable vi mode
 bindkey -v
@@ -20,3 +20,5 @@ antigen theme fino-time
 
 antigen apply
 
+
+eval $(thefuck --alias)
