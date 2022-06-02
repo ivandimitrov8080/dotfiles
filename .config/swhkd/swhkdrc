@@ -6,10 +6,6 @@ F12
 	print-screen
 F11
 	print-screen -s
-super + b
-	brave-browser-nightly
-super + s
-	steam
 super + shift + End
 	sudo poweroff
 super + shift + Home
