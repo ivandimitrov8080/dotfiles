@@ -1,5 +1,4 @@
 source ~/.config/zsh/antigen.zsh
-source /usr/share/git/completion/git-completion.zsh
 source ~/bin/functions/*
 
 #Enable vi mode
@@ -20,5 +19,3 @@ antigen theme fino-time
 
 antigen apply
 
-
-eval $(thefuck --alias)
