@@ -3,7 +3,6 @@ swhks &
 pkexec swhkd &
 dns-over-tls &
 numlockx &
-dns-over-tls &
 bingwp &
 picom &
 brave-nightly &
