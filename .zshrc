@@ -1,5 +1,5 @@
 source ~/.config/zsh/antigen.zsh
-source ~/bin/functions/*
+for f in ~/bin/functions/*; do source $f; done
 
 #Enable vi mode
 bindkey -v
