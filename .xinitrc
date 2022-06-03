@@ -1,6 +1,14 @@
-xrandr --setprovideroutputsource modesetting NVIDIA-0
-xrandr --auto
-pulseaudio -v >> /var/log/pulseaudio.log
-dwmblocks &
-exec dwm
+
+swhks &
+pkexec swhkd &
+dns-over-tls &
+numlockx &
+dns-over-tls &
+bingwp &
+picom &
+brave-nightly &
+st &
+xrandr --output DP-0 --mode 1920x1080 --rate 144.00 &
+xrdb -merge ~/.Xresources
+exec start-dwm
 
