@@ -1,4 +1,4 @@
-source ~/.config/zsh/antigen.zsh
+source ~/.antigen/antigen.zsh
 
 #Enable vi mode
 bindkey -v
