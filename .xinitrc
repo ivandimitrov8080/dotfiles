@@ -1,7 +1,7 @@
 
 swhks &
 pkexec swhkd &
-dns-over-tls &
+sudo dns-over-tls &
 numlockx &
 bingwp &
 picom &
