@@ -3,14 +3,22 @@ set number
 set path+=**
 set wildmenu
 
+syntax enable
+filetype plugin indent on
+
 call plug#begin()
-Plug 'ap/vim-css-color'
+Plug 'waycrate/swhkd-vim'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
-Plug 'neoclide/coc.nvim', {'branch:': 'master', 'do': 'yarn install --frozen-lockfile'}
-let g:coc_global_extensions = [ 'coc-java', 'coc-clangd', 'coc-pyright', 'coc-tslint-plugin', 'coc-tsserver', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier' ]
 Plug 'jiangmiao/auto-pairs'
 Plug 'yuezk/vim-js'
 Plug 'nvim-lua/plenary.nvim'
+Plug 'rust-lang/rust.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'dense-analysis/ale'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'kyazdani42/nvim-tree.lua'
 
 call plug#end()
+
+lua require("nvim-tree").setup()
 

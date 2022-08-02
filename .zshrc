@@ -19,3 +19,9 @@ antigen theme fino-time
 
 antigen apply
 
+
+# pnpm
+export PNPM_HOME="/home/ivand/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+
