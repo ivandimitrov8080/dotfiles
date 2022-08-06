@@ -6,8 +6,12 @@ F12
 	print-screen
 F11
 	print-screen -s
-super + shift + End
+super + shift + 0
 	sudo poweroff
-super + shift + Home
+super + shift + 9
 	sudo reboot
+super + i
+	volume set -i 5
+super + o
+	volume set -d 5
 

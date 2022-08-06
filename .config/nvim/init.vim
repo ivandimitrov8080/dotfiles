@@ -6,8 +6,10 @@ set wildmenu
 syntax enable
 filetype plugin indent on
 
+let g:vimtex_view_method = 'mupdf'
+
 call plug#begin()
-Plug 'waycrate/swhkd-vim'
+Plug 'baskerville/vim-sxhkdrc'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 Plug 'jiangmiao/auto-pairs'
 Plug 'yuezk/vim-js'
@@ -17,6 +19,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dense-analysis/ale'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
+Plug 'lervag/vimtex'
 
 call plug#end()
 
