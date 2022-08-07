@@ -6,8 +6,6 @@ set wildmenu
 syntax enable
 filetype plugin indent on
 
-let g:vimtex_view_method = 'mupdf'
-
 call plug#begin()
 Plug 'baskerville/vim-sxhkdrc'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
@@ -24,4 +22,31 @@ Plug 'lervag/vimtex'
 call plug#end()
 
 lua require("nvim-tree").setup()
+
+" Configuration
+
+" Vimtex
+let g:vimtex_view_method = 'mupdf'
+
+" Firenvim
+
+let g:firenvim_config = { 
+    \ 'globalSettings': {
+        \ 'alt': 'all',
+    \  },
+    \ 'localSettings': {
+        \ '.*': {
+            \ 'cmdline': 'neovim',
+            \ 'content': 'text',
+            \ 'priority': 0,
+            \ 'selector': 'textarea',
+            \ 'takeover': 'always',
+        \ },
+    \ }
+\ }
+
+let fc = g:firenvim_config['localSettings']
+let fc['https?://[^/]*facebook.com/*'] = { 'takeover': 'never', 'priority': 1 }
+
+" End Confguration
 
