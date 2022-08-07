@@ -1,6 +1,5 @@
-
 bash -c "sleep 1 && sudo session-setup" &
 
-xrdb -merge ~/.Xresources
+xrdb -merge "$HOME/.Xresources"
 exec start-dwm
 

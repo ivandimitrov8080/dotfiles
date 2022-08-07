@@ -1,7 +1,9 @@
-. "$HOME/.cargo/env"
-. "$HOME/bin/env"
+# Source functions
+for f in "$HOME/bin/functions/"*; do source $f; done
 
-if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  exec startx
-fi
+# Set variables
+export EDITOR=nvim
+
+# Set aliases
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
