@@ -48,5 +48,12 @@ let g:firenvim_config = {
 let fc = g:firenvim_config['localSettings']
 let fc['https?://[^/]*facebook.com/*'] = { 'takeover': 'never', 'priority': 1 }
 
+" coc
+
+hi CocInfoFloat guifg=white guibg=black
+hi CocErrorFloat guifg=white guibg=black
+hi CocWarningFloat guifg=white guibg=black
+hi CocHintFloat guifg=white guibg=black
+
 " End Confguration
 
