@@ -10,5 +10,6 @@ audioman start &
 brave-nightly &
 st &
 
+xrdb -merge "$HOME/.Xresources"
 exec dwm
 
