@@ -1,4 +1,4 @@
-
+dwmblocks &
 sxhkd &
 numlockx &
 bingwp &
@@ -10,5 +10,5 @@ audioman start &
 brave-nightly &
 st &
 
-exec start-dwm
+exec dwm
 
