@@ -2,9 +2,9 @@ alt + shift + Return
 	st
 alt + p
 	dmenu-run-xrdb
-F12
+super + shift + a
 	print-screen
-F11
+super + shift + s
 	print-screen -s
 super + shift + 0
 	sudo poweroff

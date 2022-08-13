@@ -7,6 +7,7 @@ syntax enable
 filetype plugin indent on
 
 call plug#begin()
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': 'TSUpdate' }
 Plug 'baskerville/vim-sxhkdrc'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 Plug 'jiangmiao/auto-pairs'
