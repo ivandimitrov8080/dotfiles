@@ -1,3 +1,4 @@
+dunst &
 dwmblocks &
 sxhkd &
 bingwp &

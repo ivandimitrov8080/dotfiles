@@ -9,6 +9,7 @@ append_path () {
 }
 
 append_path "$HOME/bin"
+append_path "$HOME/node_modules/.bin"
 append_path "$HOME/.cargo/bin"
 append_path "$HOME/.local/bin"
 append_path "$HOME/.local/share/pnpm:$PATH"
