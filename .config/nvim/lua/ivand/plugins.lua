@@ -35,12 +35,18 @@ return require('packer').startup({
         -- Editor UI Niceties --
         --------------------------
 
-        use({
-            'chriskempson/base16-vim',
-            config = function()
-                require('ivand.plugins.base-16')
-            end,
-        })
+        use {
+            'nvim-lualine/lualine.nvim',
+            requires = {
+                'kyazdani42/nvim-web-devicons',
+                {
+                    'RRethy/nvim-base16',
+                    config = function()
+                        require('ivand.plugins.base-16')
+                    end,
+                }
+            },
+        }
 
         ---------------------------------
         -- Navigation and Fuzzy Search --
@@ -93,6 +99,9 @@ return require('packer').startup({
         use({
             'wellle/targets.vim',
             event = 'BufRead',
+            config = function()
+                require('lualine').setup()
+            end
         })
 
         --------------
@@ -121,14 +130,12 @@ return require('packer').startup({
 
         use({
                 'hrsh7th/nvim-cmp',
-                event = 'InsertEnter',
                 config = function()
                     require('ivand.plugins.nvim-cmp')
                 end,
                 requires = {
                     {
                         'L3MON4D3/LuaSnip',
-                        event = 'InsertEnter',
                         config = function()
                             require('ivand.plugins.luasnip')
                         end,
@@ -140,19 +147,30 @@ return require('packer').startup({
                         },
                     },
                 },
-            { 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp' },
-            { 'hrsh7th/cmp-path', after = 'nvim-cmp' },
-            { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' },
+                { 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp' },
+                { 'hrsh7th/cmp-path', after = 'nvim-cmp' },
+                { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' },
         })
 
         use({
             'windwp/nvim-autopairs',
             event = 'InsertCharPre',
             after = 'nvim-cmp',
-            config = function() 
+            config = function()
                 require('nvim-autopairs').setup({})
             end
         })
+
+        -------------------
+        -- Compatibility --
+        -------------------
+
+--        use({
+--            'nvim-orgmode/orgmode',
+--            config = function()
+--                require('orgmode').setup()
+--            end
+--        })
 
     end,
     config = {

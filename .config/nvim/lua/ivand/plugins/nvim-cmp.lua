@@ -2,7 +2,6 @@ local cmp = require('cmp')
 
 cmp.setup({
     mapping = cmp.mapping.preset.insert({
-        ['<C-e>'] = cmp.config.disable,
         ['<C-d>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
         ['<C-y>'] = cmp.mapping.confirm({ select = true }),
@@ -14,19 +13,19 @@ cmp.setup({
         { name = 'path', max_item_count = 10 },
         { name = 'buffer', max_item_count = 10 },
     },
+    window = {
+        completion = cmp.config.window.bordered(),
+    },
     snippet = {
         expand = function(args)
             require('luasnip').lsp_expand(args.body)
         end,
     },
-    formatting = {
-        format = function(entry, item)
-            -- Kind icons
-            item.kind = string.format('%s %s', icons[item.kind], item.kind)
-            -- Source
-            item.menu = string.format('[%s]', aliases[entry.source.name] or entry.source.name)
-            return item
-        end,
-    },
+    completion = {
+        keyword_length = 2,
+        autocomplete = true
+    }
 })
+
+vim.o.completeopt = 'menuone,noselect'
 

@@ -19,7 +19,7 @@ local function on_attach(client, buf)
 end
 
 -- Disable LSP logging
-vim.lsp.set_log_level(vim.lsp.log_levels.OFF)
+vim.lsp.set_log_level('debug')
 
 -- Configuring native diagnostics
 vim.diagnostic.config({

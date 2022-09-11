@@ -81,12 +81,6 @@ _G.packer_plugins = {
     path = "/home/ivand/.local/share/nvim/site/pack/packer/opt/FTerm.nvim",
     url = "https://github.com/numToStr/FTerm.nvim"
   },
-  ["base16-vim"] = {
-    config = { "\27LJ\2\n5\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\26ivand.plugins.base-16\frequire\0" },
-    loaded = true,
-    path = "/home/ivand/.local/share/nvim/site/pack/packer/start/base16-vim",
-    url = "https://github.com/chriskempson/base16-vim"
-  },
   ["cmp-buffer"] = {
     after_files = { "/home/ivand/.local/share/nvim/site/pack/packer/opt/cmp-buffer/after/plugin/cmp_buffer.lua" },
     load_after = {},
@@ -116,6 +110,11 @@ _G.packer_plugins = {
     path = "/home/ivand/.local/share/nvim/site/pack/packer/opt/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/ivand/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
   ["nvim-autopairs"] = {
     config = { "\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0" },
     load_after = {},
@@ -124,6 +123,12 @@ _G.packer_plugins = {
     only_cond = false,
     path = "/home/ivand/.local/share/nvim/site/pack/packer/opt/nvim-autopairs",
     url = "https://github.com/windwp/nvim-autopairs"
+  },
+  ["nvim-base16"] = {
+    config = { "\27LJ\2\n5\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\26ivand.plugins.base-16\frequire\0" },
+    loaded = true,
+    path = "/home/ivand/.local/share/nvim/site/pack/packer/start/nvim-base16",
+    url = "https://github.com/RRethy/nvim-base16"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -145,7 +150,7 @@ _G.packer_plugins = {
     url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
-    after = { "playground", "nvim-ts-context-commentstring", "nvim-ts-autotag", "nvim-treesitter-textobjects", "nvim-treesitter-refactor" },
+    after = { "nvim-treesitter-refactor", "nvim-ts-autotag", "nvim-treesitter-textobjects", "playground", "nvim-ts-context-commentstring" },
     config = { "\27LJ\2\n8\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\29ivand.plugins.treesitter\frequire\0" },
     loaded = false,
     needs_bufread = false,
@@ -189,6 +194,11 @@ _G.packer_plugins = {
     path = "/home/ivand/.local/share/nvim/site/pack/packer/opt/nvim-ts-context-commentstring",
     url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
   },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/ivand/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/ivand/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -209,6 +219,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["targets.vim"] = {
+    config = { "\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\flualine\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -264,24 +275,24 @@ time([[Defining packer_plugins]], false)
 time([[Config for nvim-tree.lua]], true)
 try_loadstring("\27LJ\2\n7\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\28ivand.plugins.nvim-tree\frequire\0", "config", "nvim-tree.lua")
 time([[Config for nvim-tree.lua]], false)
--- Config for: base16-vim
-time([[Config for base16-vim]], true)
-try_loadstring("\27LJ\2\n5\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\26ivand.plugins.base-16\frequire\0", "config", "base16-vim")
-time([[Config for base16-vim]], false)
+-- Config for: nvim-base16
+time([[Config for nvim-base16]], true)
+try_loadstring("\27LJ\2\n5\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\26ivand.plugins.base-16\frequire\0", "config", "nvim-base16")
+time([[Config for nvim-base16]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-cmp ]]
-vim.cmd [[ packadd cmp_luasnip ]]
-vim.cmd [[ packadd cmp-path ]]
 vim.cmd [[ packadd cmp-buffer ]]
+vim.cmd [[ packadd cmp-path ]]
+vim.cmd [[ packadd cmp_luasnip ]]
 time([[Sequenced loading]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufRead * ++once lua require("packer.load")({'nvim-lspconfig', 'vim-repeat', 'vim-surround', 'targets.vim'}, { event = "BufRead *" }, _G.packer_plugins)]]
-vim.cmd [[au CursorHold * ++once lua require("packer.load")({'FTerm.nvim', 'nvim-treesitter', 'telescope.nvim'}, { event = "CursorHold *" }, _G.packer_plugins)]]
+vim.cmd [[au CursorHold * ++once lua require("packer.load")({'nvim-treesitter', 'telescope.nvim', 'FTerm.nvim'}, { event = "CursorHold *" }, _G.packer_plugins)]]
 vim.cmd [[au InsertCharPre * ++once lua require("packer.load")({'nvim-autopairs'}, { event = "InsertCharPre *" }, _G.packer_plugins)]]
+vim.cmd [[au BufRead * ++once lua require("packer.load")({'vim-surround', 'targets.vim', 'nvim-lspconfig', 'vim-repeat'}, { event = "BufRead *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 
