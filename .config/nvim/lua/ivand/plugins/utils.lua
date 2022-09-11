@@ -2,7 +2,7 @@ local map = vim.keymap.set
 
 local U = {}
 
-local fmt_group = vim.api.nvim_create_augroup('FORMATTING', { clear = true })
+local fmt_group = vim.api.nvim_create_augroup('FORMATTING', {clear = true})
 
 ---Common format-on-save for lsp servers that implements formatting
 ---@param client table
@@ -13,11 +13,8 @@ function U.fmt_on_save(client, buf)
             group = fmt_group,
             buffer = buf,
             callback = function()
-                vim.lsp.buf.format({
-                    timeout_ms = 3000,
-                    buffer = buf,
-                })
-            end,
+                vim.lsp.buf.format({timeout_ms = 3000, buffer = buf})
+            end
         })
     end
 end
@@ -41,7 +38,7 @@ end
 ---Creates LSP mappings
 ---@param buf number
 function U.mappings(buf)
-    local opts = { buffer = buf }
+    local opts = {buffer = buf}
 
     map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
     map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
@@ -64,4 +61,3 @@ function U.mappings(buf)
 end
 
 return U
-

@@ -22,13 +22,20 @@ return require('packer').startup({
                 run = ':TSUpdate',
                 config = function()
                     require('ivand.plugins.treesitter')
-                end,
+                end
+            }, {'nvim-treesitter/playground', after = 'nvim-treesitter'},
+            {
+                'nvim-treesitter/nvim-treesitter-textobjects',
+                after = 'nvim-treesitter'
             },
-            { 'nvim-treesitter/playground', after = 'nvim-treesitter' },
-            { 'nvim-treesitter/nvim-treesitter-textobjects', after = 'nvim-treesitter' },
-            { 'nvim-treesitter/nvim-treesitter-refactor', after = 'nvim-treesitter' },
-            { 'windwp/nvim-ts-autotag', after = 'nvim-treesitter' },
-            { 'JoosepAlviste/nvim-ts-context-commentstring', after = 'nvim-treesitter' },
+            {
+                'nvim-treesitter/nvim-treesitter-refactor',
+                after = 'nvim-treesitter'
+            }, {'windwp/nvim-ts-autotag', after = 'nvim-treesitter'},
+            {
+                'JoosepAlviste/nvim-ts-context-commentstring',
+                after = 'nvim-treesitter'
+            }
         })
 
         --------------------------
@@ -38,14 +45,13 @@ return require('packer').startup({
         use {
             'nvim-lualine/lualine.nvim',
             requires = {
-                'kyazdani42/nvim-web-devicons',
-                {
+                'kyazdani42/nvim-web-devicons', {
                     'RRethy/nvim-base16',
                     config = function()
                         require('ivand.plugins.base-16')
-                    end,
+                    end
                 }
-            },
+            }
         }
 
         ---------------------------------
@@ -54,9 +60,7 @@ return require('packer').startup({
 
         use({
             'kyazdani42/nvim-tree.lua',
-            config = function()
-                require('ivand.plugins.nvim-tree')
-            end,
+            config = function() require('ivand.plugins.nvim-tree') end
         })
 
         use({
@@ -65,20 +69,16 @@ return require('packer').startup({
                 event = 'CursorHold',
                 config = function()
                     require('ivand.plugins.telescope')
-                end,
-            },
-            {
+                end
+            }, {
                 'nvim-telescope/telescope-fzf-native.nvim',
                 after = 'telescope.nvim',
                 run = 'make',
                 config = function()
                     require('telescope').load_extension('fzf')
-                end,
+                end
             },
-            {
-                'nvim-telescope/telescope-symbols.nvim',
-                after = 'telescope.nvim',
-            },
+            {'nvim-telescope/telescope-symbols.nvim', after = 'telescope.nvim'}
         })
 
         -------------------------
@@ -88,30 +88,20 @@ return require('packer').startup({
         use({
             'tpope/vim-surround',
             event = 'BufRead',
-            requires = {
-                {
-                    'tpope/vim-repeat',
-                    event = 'BufRead',
-                },
-            },
+            requires = {{'tpope/vim-repeat', event = 'BufRead'}}
         })
 
         use({
             'wellle/targets.vim',
             event = 'BufRead',
-            config = function()
-                require('lualine').setup()
-            end
+            config = function() require('lualine').setup() end
         })
 
         --------------
         -- Terminal --
         --------------
 
-        use({
-            'numToStr/FTerm.nvim',
-            event = 'CursorHold',
-        })
+        use({'numToStr/FTerm.nvim', event = 'CursorHold'})
 
         -----------------------------------
         -- LSP, Completions and Snippets --
@@ -120,65 +110,53 @@ return require('packer').startup({
         use({
             'neovim/nvim-lspconfig',
             event = 'BufRead',
-            config = function()
-                require('ivand.plugins.lspconfig')
-            end,
-            requires = {
-                'hrsh7th/cmp-nvim-lsp',
-            },
+            config = function() require('ivand.plugins.lspconfig') end,
+            requires = {'hrsh7th/cmp-nvim-lsp'}
         })
 
         use({
-                'hrsh7th/nvim-cmp',
-                config = function()
-                    require('ivand.plugins.nvim-cmp')
-                end,
-                requires = {
-                    {
-                        'L3MON4D3/LuaSnip',
-                        config = function()
-                            require('ivand.plugins.luasnip')
-                        end,
-                        requires = {
-                            {
-                                'rafamadriz/friendly-snippets',
-                                event = 'CursorHold',
-                            },
-                        },
-                    },
-                },
-                { 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp' },
-                { 'hrsh7th/cmp-path', after = 'nvim-cmp' },
-                { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' },
+            'hrsh7th/nvim-cmp',
+            config = function() require('ivand.plugins.nvim-cmp') end,
+            requires = {
+                {
+                    'L3MON4D3/LuaSnip',
+                    config = function()
+                        require('ivand.plugins.luasnip')
+                    end,
+                    requires = {
+                        {'rafamadriz/friendly-snippets', event = 'CursorHold'}
+                    }
+                }
+            },
+            {'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp'},
+            {'hrsh7th/cmp-path', after = 'nvim-cmp'},
+            {'hrsh7th/cmp-buffer', after = 'nvim-cmp'}
         })
 
         use({
             'windwp/nvim-autopairs',
             event = 'InsertCharPre',
             after = 'nvim-cmp',
-            config = function()
-                require('nvim-autopairs').setup({})
-            end
+            config = function() require('nvim-autopairs').setup({}) end
         })
 
         -------------------
         -- Compatibility --
         -------------------
 
---        use({
---            'nvim-orgmode/orgmode',
---            config = function()
---                require('orgmode').setup()
---            end
---        })
+        --        use({
+        --            'nvim-orgmode/orgmode',
+        --            config = function()
+        --                require('orgmode').setup()
+        --            end
+        --        })
 
     end,
     config = {
         display = {
             open_fn = function()
-                return require('packer.util').float({ border = 'single' })
-            end,
-        },
-    },
+                return require('packer.util').float({border = 'single'})
+            end
+        }
+    }
 })
-

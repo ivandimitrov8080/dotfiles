@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+for f in $( find "$( cd ..; pwd)" -name "*.lua"); do
+    formatted=$( lua-format "$f" )
+    echo "$formatted" > "$f"
+done
+

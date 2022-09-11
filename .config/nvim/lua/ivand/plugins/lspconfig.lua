@@ -2,10 +2,7 @@ local lsp = require('lspconfig')
 local U = require('ivand.plugins.utils')
 
 ---Common perf related flags for all the LSP servers
-local flags = {
-    allow_incremental_sync = true,
-    debounce_text_changes = 200,
-}
+local flags = {allow_incremental_sync = true, debounce_text_changes = 200}
 
 ---Common capabilities including lsp snippets and autocompletion
 local capabilities = U.capabilities()
@@ -23,12 +20,8 @@ vim.lsp.set_log_level('debug')
 
 -- Configuring native diagnostics
 vim.diagnostic.config({
-    virtual_text = {
-        source = 'always',
-    },
-    float = {
-        source = 'always',
-    },
+    virtual_text = {source = 'always'},
+    float = {source = 'always'}
 })
 
 -- Lua
@@ -40,26 +33,22 @@ lsp.sumneko_lua.setup({
         Lua = {
             completion = {
                 enable = true,
-                showWord = 'Disable',
+                showWord = 'Disable'
                 -- keywordSnippet = 'Disable',
             },
             runtime = {
                 -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-                version = 'LuaJIT',
+                version = 'LuaJIT'
             },
-            diagnostics = {
-                globals = { 'vim' },
-            },
+            diagnostics = {globals = {'vim'}},
             workspace = {
                 -- Make the server aware of Neovim runtime files
-                library = { os.getenv('VIMRUNTIME') },
+                library = {os.getenv('VIMRUNTIME')}
             },
             -- Do not send telemetry data containing a randomized but unique identifier
-            telemetry = {
-                enable = false,
-            },
-        },
-    },
+            telemetry = {enable = false}
+        }
+    }
 })
 
 -- Rust
@@ -69,22 +58,17 @@ lsp.rust_analyzer.setup({
     on_attach = on_attach,
     settings = {
         ['rust-analyzer'] = {
-            cargo = {
-                allFeatures = true,
-            },
-            checkOnSave = {
-                allFeatures = true,
-                command = 'clippy',
-            },
+            cargo = {allFeatures = true},
+            checkOnSave = {allFeatures = true, command = 'clippy'},
             procMacro = {
                 ignored = {
-                    ['async-trait'] = { 'async_trait' },
-                    ['napi-derive'] = { 'napi' },
-                    ['async-recursion'] = { 'async_recursion' },
-                },
-            },
-        },
-    },
+                    ['async-trait'] = {'async_trait'},
+                    ['napi-derive'] = {'napi'},
+                    ['async-recursion'] = {'async_recursion'}
+                }
+            }
+        }
+    }
 })
 
 -- Python
@@ -97,14 +81,14 @@ local servers = {
     'html', -- HTML
     'cssls', -- CSS
     'jsonls', -- Json
-    'yamlls', -- YAML
+    'yamlls' -- YAML
 }
 
 for _, server in ipairs(servers) do
     lsp[server].setup({
         flags = flags,
         capabilities = capabilities,
-        on_attach = on_attach,
+        on_attach = on_attach
     })
 end
 
