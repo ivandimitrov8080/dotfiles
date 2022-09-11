@@ -17,7 +17,7 @@ cmp.setup({
     snippet = {
         expand = function(args) require('luasnip').lsp_expand(args.body) end
     },
-    completion = {keyword_length = 2, autocomplete = true}
+    completion = {completeopt = 'menu,menuone,noinsert'},
 })
 
 vim.o.completeopt = 'menuone,noselect'
