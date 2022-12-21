@@ -2,6 +2,6 @@
 #dwm.normbgcolor:
 #dwm.normfgcolor:
 dwm.selbordercolor: #04A777
-dwm.selbgcolor: #0B6623
-#dwm.selfgcolor: #000000
+dwm.selbgcolor: #FFB6C1
+dwm.selfgcolor: #000000
 
