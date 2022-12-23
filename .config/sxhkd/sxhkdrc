@@ -5,7 +5,7 @@ alt + p
 super + shift + a
 	print-screen
 super + shift + s
-	print-screen -s
+	print-screen -s --line color='red',mode='edge'
 super + shift + 0
 	sudo poweroff
 super + shift + 9
