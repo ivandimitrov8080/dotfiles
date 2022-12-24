@@ -65,8 +65,15 @@ require('packer').startup(function(use)
   use 'tpope/vim-rhubarb'
   use 'lewis6991/gitsigns.nvim'
 
-  -- use 'navarasu/onedark.nvim' -- Theme inspired by Atom
-  use 'Mofiqul/vscode.nvim'
+  -- use 'vscode' -- Theme inspired by vscode
+  use {
+    'Mofiqul/vscode.nvim',
+    config = function ()
+      require('vscode').setup({
+        transparent = true
+      })
+    end
+  }
   use 'nvim-lualine/lualine.nvim' -- Fancier statusline
   use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
   use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
@@ -121,6 +128,9 @@ vim.o.cursorline = true
 
 -- Set cursor margin
 vim.o.scrolloff = 20
+
+-- Set cursor margin
+vim.o.termguicolors = true
 
 -- Make line numbers default
 vim.wo.number = true
@@ -246,7 +256,8 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'javascript', 'help', 'svelte', 'bash', 'css', 'html' },
+  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'javascript', 'help', 'svelte', 'bash',
+    'css', 'html' },
 
   highlight = { enable = true },
   indent = { enable = true, disable = { 'python' } },
