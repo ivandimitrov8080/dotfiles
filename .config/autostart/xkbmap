@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+setxkbmap -layout 'us,bg(phonetic)' -option 'grp:win_space_toggle'

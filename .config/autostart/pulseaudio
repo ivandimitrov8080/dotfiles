@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+while ! jack_lsp;do
+	sleep 0.05
+done
+
+pulseaudio --start -D
+
