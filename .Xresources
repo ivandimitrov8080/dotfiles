@@ -1,6 +1,6 @@
-#dwm.normbordercolor:
-#dwm.normbgcolor:
-#dwm.normfgcolor:
+dwm.normbordercolor: #04A777
+dwm.normbgcolor: #FFB6C1
+dwm.normfgcolor: #000000
 dwm.selbordercolor: #04A777
 dwm.selbgcolor: #FFB6C1
 dwm.selfgcolor: #000000
