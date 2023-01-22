@@ -13,8 +13,3 @@ antigen apply
 # Enable vi mode
 bindkey -v
 
-# Start tmux by default
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux
-fi
-
