@@ -149,7 +149,7 @@ _G.packer_plugins = {
     url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-tree.lua"] = {
-    config = { "\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14nvim-tree\frequire\0" },
+    config = { "\27LJ\2\n}\0\3\n\0\t\0\17\15\0\2\0X\3\3€'\3\0\0\18\4\2\0&\2\4\0036\3\1\0009\3\2\0039\3\3\3'\5\4\0\18\6\0\0\18\a\1\0005\b\5\0006\t\6\0=\t\a\b=\2\b\bB\3\5\1K\0\1\0\tdesc\vbuffer\nbufnr\1\0\0\6n\bset\vkeymap\bvim\16nvim-tree: ¦\1\1\0\a\0\n\0\0176\0\0\0'\2\1\0B\0\2\0029\1\2\0B\1\1\0013\1\3\0\18\2\1\0'\4\4\0009\5\5\0'\6\6\0B\2\4\1\18\2\1\0'\4\a\0009\5\b\0'\6\t\0B\2\4\1K\0\1\0\19[T]ree [F]ocus\nfocus\15<leader>tf\20[T]ree [T]oggle\vtoggle\15<leader>tt\0\nsetup\14nvim-tree\frequire\0" },
     loaded = true,
     path = "/home/ivand/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
     url = "https://github.com/nvim-tree/nvim-tree.lua"
@@ -218,23 +218,23 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+try_loadstring("\27LJ\2\n}\0\3\n\0\t\0\17\15\0\2\0X\3\3€'\3\0\0\18\4\2\0&\2\4\0036\3\1\0009\3\2\0039\3\3\3'\5\4\0\18\6\0\0\18\a\1\0005\b\5\0006\t\6\0=\t\a\b=\2\b\bB\3\5\1K\0\1\0\tdesc\vbuffer\nbufnr\1\0\0\6n\bset\vkeymap\bvim\16nvim-tree: ¦\1\1\0\a\0\n\0\0176\0\0\0'\2\1\0B\0\2\0029\1\2\0B\1\1\0013\1\3\0\18\2\1\0'\4\4\0009\5\5\0'\6\6\0B\2\4\1\18\2\1\0'\4\a\0009\5\b\0'\6\t\0B\2\4\1K\0\1\0\19[T]ree [F]ocus\nfocus\15<leader>tf\20[T]ree [T]oggle\vtoggle\15<leader>tt\0\nsetup\14nvim-tree\frequire\0", "config", "nvim-tree.lua")
+time([[Config for nvim-tree.lua]], false)
 -- Config for: vscode.nvim
 time([[Config for vscode.nvim]], true)
 try_loadstring("\27LJ\2\nH\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\16transparent\2\nsetup\vvscode\frequire\0", "config", "vscode.nvim")
 time([[Config for vscode.nvim]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14nvim-tree\frequire\0", "config", "nvim-tree.lua")
-time([[Config for nvim-tree.lua]], false)
 -- Conditional loads
 time([[Conditional loading of telescope-fzf-native.nvim]], true)
   require("packer.load")({"telescope-fzf-native.nvim"}, {}, _G.packer_plugins)
 time([[Conditional loading of telescope-fzf-native.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
-vim.cmd [[ packadd nvim-cmp ]]
 vim.cmd [[ packadd nvim-treesitter ]]
 vim.cmd [[ packadd nvim-treesitter-textobjects ]]
+vim.cmd [[ packadd nvim-cmp ]]
 time([[Sequenced loading]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]

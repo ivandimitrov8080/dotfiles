@@ -51,7 +51,16 @@ require('packer').startup(function(use)
     },
     tag = 'nightly',
     config = function()
-      require("nvim-tree").setup()
+      local tree = require("nvim-tree")
+      tree.setup()
+      local nmap = function(keys, func, desc)
+        if desc then
+          desc = 'nvim-tree: ' .. desc
+        end
+        vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
+      end
+      nmap('<leader>tt', tree.toggle, '[T]ree [T]oggle')
+      nmap('<leader>tf', tree.focus, '[T]ree [F]ocus')
     end
   }
 
@@ -68,7 +77,7 @@ require('packer').startup(function(use)
   -- use 'vscode' -- Theme inspired by vscode
   use {
     'Mofiqul/vscode.nvim',
-    config = function ()
+    config = function()
       require('vscode').setup({
         transparent = true
       })
