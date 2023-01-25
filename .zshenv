@@ -28,9 +28,3 @@ etch() {
 	sudo dd if="$1" of="$2" bs=4M conv=fdatasync status=progress
 }
 
-### --- TORRENT FUNCTIONS --- ###
-
-torrent() {
-	transmission-cli $@ > /dev/null 2>&1 &
-}
-
