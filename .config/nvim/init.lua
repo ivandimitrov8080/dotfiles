@@ -129,6 +129,9 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 -- [[ Setting options ]]
 -- See `:help vim.o`
 
+-- Set the spellchecking language
+vim.o.spelllang = 'en'
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
