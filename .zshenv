@@ -9,6 +9,7 @@ alias nv='nvim'
 alias torrent='transmission-remote'
 alias npm='pnpm'
 alias npx='pnpx'
+alias mutt='neomutt'
 
 # Define functions
 
