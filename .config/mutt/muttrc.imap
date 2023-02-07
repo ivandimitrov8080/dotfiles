@@ -1,0 +1,8 @@
+set spoolfile=imaps://ivan@mail.idimitrov.dev/INBOX
+set folder=imaps://ivan@mail.idimitrov.dev/
+set imap_pass="`gopass -o ivan@idimitrov.dev`"
+
+
+# Functions
+bind index \Cr imap-fetch-mail
+

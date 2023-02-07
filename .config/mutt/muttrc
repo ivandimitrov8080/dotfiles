@@ -1,0 +1,10 @@
+source ./muttrc.colors
+source ./muttrc.aliases
+source ./muttrc.user
+source ./muttrc.imap
+source ./muttrc.smtp
+source ./muttrc.sidebar
+source ./muttrc.macros
+
+auto_view text/html
+

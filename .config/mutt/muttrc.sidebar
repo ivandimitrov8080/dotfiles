@@ -1,0 +1,46 @@
+set sidebar_visible
+set sidebar_width = 20
+set sidebar_short_path = no
+set sidebar_next_new_wrap = no
+set sidebar_divider_char = '|'
+set mail_check_stats
+set sidebar_format = '%B%?F? [%F]?%* %?N?%N/?%S'
+set sidebar_sort_method = 'unsorted'
+
+set record = "+Sent"
+set trash = "+Trash"
+set postponed = "+Drafts"
+
+mailboxes =Inbox =Sent =Trash =Drafts =Archived
+
+# --------------------------------------------------------------------------
+# FUNCTIONS - shown with an example mapping
+# --------------------------------------------------------------------------
+
+# Move the highlight to the previous mailbox
+bind index,pager \Ck sidebar-prev
+
+# Move the highlight to the next mailbox
+bind index,pager \Cj sidebar-next
+
+# Open the highlighted mailbox
+bind index,pager \Co sidebar-open
+
+# Move the highlight to the previous page
+# This is useful if you have a LOT of mailboxes.
+#bind index,pager <F3> sidebar-page-up
+
+# Move the highlight to the next page
+# This is useful if you have a LOT of mailboxes.
+#bind index,pager <F4> sidebar-page-down
+
+# Move the highlight to the previous mailbox containing new, or flagged,
+# mail.
+#bind index,pager \CK sidebar-prev-new
+
+# Move the highlight to the next mailbox containing new, or flagged, mail.
+#bind index,pager \CJ sidebar-next-new
+
+# Toggle the visibility of the Sidebar.
+bind index,pager B sidebar-toggle-visible
+

@@ -1,0 +1,3 @@
+set smtp_url=smtps://ivan@mail.idimitrov.dev
+set smtp_pass="`gopass -o ivan@idimitrov.dev`"
+

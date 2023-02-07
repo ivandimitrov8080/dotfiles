@@ -1,0 +1,4 @@
+# Opens links
+macro index \Cv |urlscan\n
+macro pager \Cv |urlscan\n
+
