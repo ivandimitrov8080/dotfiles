@@ -1,3 +1,8 @@
+# Set sources
+
+source <(gopass completion zsh) > /dev/null 2>&1
+source /usr/share/git/completion/git-completion.zsh > /dev/null 2>&1
+
 # Set variables
 export EDITOR=nvim
 export TZ='Europe/London'
